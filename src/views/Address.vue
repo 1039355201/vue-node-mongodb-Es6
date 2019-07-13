@@ -87,6 +87,17 @@
       </span>
     </el-dialog>
 
+    <el-dialog
+          title=""
+          :visible.sync="longinTip"
+          width="30%"
+          center
+        >
+          <span class="cartTip">购物车地址至少有一个！</span>
+          <span slot="footer" class="dialog-footer">
+            <el-button @click="longinTip = false" type="danger" style="width:120px">关闭</el-button>   
+          </span>
+        </el-dialog>
   </div>
 </template>
 
@@ -114,6 +125,7 @@ export default {
       selectAddressId:'',
       addressdialogVisible:false,
       addressRemovedialog:false,
+      longinTip:false,
       labelPosition:'left',
       show:false,
       formAddAddress:{
@@ -156,6 +168,10 @@ export default {
       // }
     },
     confirmDel(addressId){
+      if(this.addressListFilter.length<=1){
+        this.longinTip=true;
+        return 
+      }
       this.addressRemovedialog = true;
       this.addressId=addressId;
     },
@@ -215,10 +231,9 @@ export default {
               this.selectAddressId = item.addressId;
             }
           })
-          // console.log(this.cartList);  
-          
+                 
         }
-        // console.log(res,this.addressList);
+       
         
       })
     }

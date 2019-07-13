@@ -66,10 +66,9 @@ export default {
               case 1:  this.message='密码输入错误!';break;
               case 2:  this.message='用户不存在,请注册~';break;
               default: break;
-            }
             console.log('防抖成功!');
             
-            
+            }
           }
       })
     },

@@ -172,11 +172,11 @@ export default {
     loadMore(){
             // disabled true 取消懒加载
        this.busy = true;
-               setTimeout(() => {
-                this.page++;
-                this.getGoodsList(true);
-              }, 2000);
-        },
+         setTimeout(() => {
+          this.page++;
+          this.getGoodsList(true);
+        }, 2000);
+      },
     getGoodsList(flag){
       let param = {
            page:this.page,

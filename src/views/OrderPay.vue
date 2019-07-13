@@ -76,7 +76,7 @@ export default {
               if(res.code==0){
                 this.orderTotal=res.result;
               }
-              console.log(res);
+              // console.log(res);
           })
       
       

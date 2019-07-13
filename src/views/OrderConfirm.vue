@@ -119,7 +119,7 @@ export default {
             }
           })
           this.totalPrice=this.totalPrice + this.transportExpense - this.discount
-          console.log(this.cartList,this.orderList);  
+          // console.log(this.cartList,this.orderList);  
         }
         
         
