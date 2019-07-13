@@ -9,7 +9,7 @@ var productSchma = new Schema({
   "salePrice": Number
 });
 //连接数据库
-mongoose.connect('mongodb://127.0.0.1:27017/lymmall');
+mongoose.connect('mongodb://127.0.0.1:27017/stmall');
 mongoose.connection.on('connected', function () {
   console.log("Mongoose connected success");
 })

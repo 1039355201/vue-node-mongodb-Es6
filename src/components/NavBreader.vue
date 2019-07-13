@@ -10,7 +10,6 @@
     </div>
     <div class="search">
       <div class="input-wrapper">
-        <!-- <i class="icon-sousuo iconfont"></i> -->
         <el-input placeholder="请输入商品名称" v-model="selectGoods" class="input-with-select" @keyup.enter.native="search()">
           <el-select v-model="select" slot="prepend" placeholder="请选择">
             <el-option label="商品" value="1"></el-option>
@@ -51,7 +50,9 @@ export default {
         return
       }
       this.$emit('searchGoods',this.selectGoods);
-      this.selectGoods=''
+      setTimeout(() => {
+        this.selectGoods=''
+      }, 3000);
     }
   },
   created(){},
@@ -62,12 +63,12 @@ export default {
   .wrapper{
     display :flex;
     align-items :center;
-    height:70px;
     background-color :#ff6666;
     .title{
       width:500px;
       position :relative;
       left:30px;
+      top:5px;
       overflow:hidden;
       .item{
         float:left;
@@ -81,7 +82,7 @@ export default {
         font-size:14px;
         text-align:center; 
         margin-left:20px; 
-        box-sizing:border-box;
+        box-sizing:border-box
       }
     }
     .search{

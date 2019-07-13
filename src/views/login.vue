@@ -19,7 +19,7 @@
         </div>
        
         <div >
-          <label>{{message}}</label>
+          <label class="message">{{message}}</label>
         </div>
         <button type="submit" ref="btn" class="btn btn-success btn-block" >登录</button>
       </form>
@@ -50,7 +50,7 @@ export default {
     toLogin(){
       if(!this.userName || !this.userPwd){
         this.message='用户名或密码不能为空!'
-        return 
+        return 0
       }else{
         this.message='';
       }
@@ -67,7 +67,7 @@ export default {
               case 2:  this.message='用户不存在,请注册~';break;
               default: break;
             }
-            // console.log('防抖成功!');
+            console.log('防抖成功!');
             
             
           }
@@ -94,7 +94,7 @@ export default {
   mounted(){
     this.flag=true;
     var btn=this.$refs.btn;
-    btn.addEventListener('click',this.debounce(this.toLogin,1000),false)
+    btn.addEventListener('click',this.debounce(this.toLogin,500),false)
    
   }
 }
@@ -111,7 +111,6 @@ export default {
   .img-wrapper{
       position:absolute;
       top:12%;
-      // left:45%;
       margin:0 auto;
       height: 150px;
       width 150px;
@@ -179,6 +178,9 @@ export default {
         color:#fff;
         font-size:18px;
         letter-spacing :5px;
+      }
+      .message{
+        color:#f00
       }
     }
     p.register{

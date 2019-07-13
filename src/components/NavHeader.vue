@@ -2,14 +2,14 @@
   <div class="header-wrapper">
     <div class="left">
       <div class="img-wrapper">
-        <img src="./../assets/homeHeader.jpg" v-bind:class="{'rotate':flag==true}">
+        <img src="./../assets/homeHeader.jpg" v-bind:class="{'rotate':flag}">
       </div>
     </div>
     <div class="middle">糖炒栗子网上商城</div>
     <div class="right">
       <span  v-if="statuscode" class="welcome userName">{{userName}}</span>
       <span  v-if="statuscode" class="iconfont icon-dingbudaohang-zhangh welcome" @click="toLoginOut()"></span>
-      <span  v-if="statuscode" class="iconfont icon-gouwuche1 welcome" @click="addCart()"><span class="cartNum">{{cartCount}}</span></span>
+      <span  v-if="statuscode" class="iconfont iconToCart el-icon-shopping-cart-2 welcome" @click="toCart()"><span class="cartNum">{{cartCount}}</span></span>
 
       <span v-if="!statuscode" class="iconfont icon-dengluzhuce welcome" @click="toLogin()"></span>
 
@@ -97,7 +97,7 @@ export default {
          
        })   
     },
-    addCart(){
+    toCart(){
       this.$router.push('/cart')
     }
   },
@@ -176,9 +176,9 @@ export default {
       font-family:YouYuan;
     }
     .right{
-      position :relative;
-      text-align:right;
-      width:200px;
+     
+      text-align:center;
+      // width:200px;
       .welcome{
         font-size:32px;
         color:#f00;
@@ -187,11 +187,14 @@ export default {
       .userName{
         font-size:20px;
       }
+      .iconToCart{
+         position :relative;
+      }
       .cartNum{
         position :absolute;
-        top:26%;
-        left:88%;
-        background-color :red;
+        top:-20%;
+        left:55%;
+        background-color :#f9013d;
         width 20px
         height 20px
         line-height :20px;

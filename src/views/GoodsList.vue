@@ -219,6 +219,9 @@ export default {
       if(res.length){
         this.goodsList=res;
         this.loading=false;
+        // setTimeout(() => {
+        //   this.getGoodsList();
+        // }, 1000);
       }else{
         this.$message({
           message: '商品不存在!',
